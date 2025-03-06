@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "228244957066",
+    "project_id": "projectsamsung-8d35b",
+    "storage_bucket": "projectsamsung-8d35b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228244957066:android:bd3beef16abecc20ef0a73",
+        "android_client_info": {
+          "package_name": "com.example.project_samsung"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhk1aJR9YZpbVGNfhmUBxBj1pDf8Dic94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
