@@ -22,16 +22,34 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btn_log_in;
     private TextView textView;
+    private Button btn_up;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.log_in);
+        logIn();
+    }
 
+    private void logUp(){
+        btn_up = findViewById(R.id.buttonLogUp);
+        TextView text = findViewById(R.id.textView15);
+        text.setText("lalala");
+        btn_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.log_in);
+                logIn();
+            }
+        });
+    }
+
+    private void logIn(){
+        setContentView(R.layout.log_in);
         btn_log_in = findViewById(R.id.buttonLogIn);
         textView = findViewById(R.id.textViewLogInUp);
+
         btn_log_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,11 +60,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 setContentView(R.layout.log_up);
-                LogUp myObject = new LogUp();
-                myObject.onCreate();
+//                LogUp myObject = new LogUp();
+//                myObject.onCreate();
+                logUp();
             }
         });
-
-
     }
 }
