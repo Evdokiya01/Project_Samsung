@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Forum">
+
+    <ImageButton
+        android:id="@+id/imageButtonForumCourse"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonForumForum"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonForumForum"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonForumForum"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButtonForumAccount"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonForumCourse"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonForumCourse"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonForumCourse"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButtonForumForum"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonForumMarket"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonForumMarket"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonForumMarket"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButtonForumMarket"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck,UnknownIdInLayout" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/forumButtonPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="336dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        app:backgroundTint="#45A0CA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="373dp"
+        android:layout_height="499dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

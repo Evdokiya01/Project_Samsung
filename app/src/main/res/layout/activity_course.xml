@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Course">
+
+    <ImageButton
+        android:id="@+id/imageButtonCourseCourse"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonCourseForum"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonCourseForum"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonCourseForum"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="DuplicateIds,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCourseAccount"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonCourseCourse"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonCourseCourse"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonCourseCourse"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="DuplicateIds,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCourseForum"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonCourseMarket"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonCourseMarket"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonCourseMarket"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCourseMarket"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck,UnknownIdInLayout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="347dp"
+        android:layout_height="597dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonCourseCourse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

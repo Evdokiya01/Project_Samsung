@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Project_Samsung"
         tools:targetApi="31">
         <activity
+            android:name=".Course"
+            android:exported="false" />
+        <activity
+            android:name=".Forum"
+            android:exported="false" />
+        <activity
             android:name=".Account"
             android:exported="false" />
         <activity
