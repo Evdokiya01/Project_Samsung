@@ -36,11 +36,12 @@ public class Account extends AppCompatActivity {
 
         Intent intent_forum = new Intent(this, Forum.class);
         Intent intent_course = new Intent(this, Course.class);
+        Intent intent_market = new Intent(this, Market.class);
 
         btn_account_market.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //setContentView(R.layout.product);
+                startActivity(intent_market);
             }
         });
         btn_account_forum.setOnClickListener(new View.OnClickListener() {

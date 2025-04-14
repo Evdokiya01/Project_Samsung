@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class Forum extends AppCompatActivity {
 
     private ImageButton imageButtonForumMarket, imageButtonForumCourse, imageButtonForumAccount;
-    private Button forumButtonPlus;
+    //private Button forumButtonPlus;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -28,7 +28,7 @@ public class Forum extends AppCompatActivity {
         imageButtonForumCourse = findViewById(R.id.imageButtonForumCourse);
         imageButtonForumAccount = findViewById(R.id.imageButtonForumAccount);
 
-        forumButtonPlus = findViewById(R.id.forumButtonPlus);
+        //forumButtonPlus = findViewById(R.id.forumButtonPlus);
 
         Intent intent_account = new Intent(this, Account.class);
         Intent intent_course = new Intent(this, Course.class);
@@ -53,12 +53,13 @@ public class Forum extends AppCompatActivity {
                 startActivity(intent_course);
             }
         });
-
+        /*
         forumButtonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
+         */
     }
 }

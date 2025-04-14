@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Market">
+
+    <ImageButton
+        android:id="@+id/imageButtonMarketCourse"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonMarketForum"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonMarketForum"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonMarketForum"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButtonMarketAccount"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonMarketCourse"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonMarketCourse"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonMarketCourse"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButtonMarketForum"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonMarketMarket"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonMarketMarket"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonMarketMarket"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButtonMarketMarket"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="market"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

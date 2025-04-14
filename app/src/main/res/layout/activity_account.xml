@@ -9,6 +9,39 @@
     tools:ignore="DuplicateIds">
 
 
+        <ImageButton
+            android:id="@+id/imageButtonAccountAccount"
+            android:layout_width="100dp"
+            android:layout_height="57dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonAccountCourse"
+            app:layout_constraintTop_toTopOf="@+id/imageButtonAccountCourse"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButtonAccountCourse"
+            android:layout_width="100dp"
+            android:layout_height="57dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButtonAccountForum"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonAccountForum"
+            app:layout_constraintTop_toTopOf="@+id/imageButtonAccountForum"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButtonAccountForum"
+            android:layout_width="100dp"
+            android:layout_height="57dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButtonAccountMarket"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonAccountMarket"
+            app:layout_constraintTop_toTopOf="@+id/imageButtonAccountMarket"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <ImageView
             android:id="@+id/imageView13"
             android:layout_width="wrap_content"
@@ -99,7 +132,7 @@
             android:layout_height="27dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
-            android:text="TextView"
+            android:text="account"
             app:layout_constraintStart_toEndOf="@+id/imageViewAccount"
             app:layout_constraintTop_toBottomOf="@+id/imageView12" />
 
@@ -122,51 +155,10 @@
             android:id="@+id/imageButtonAccountMarket"
             android:layout_width="100dp"
             android:layout_height="57dp"
-            android:layout_marginEnd="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerView"
             app:srcCompat="@drawable/ic_launcher_foreground"
             tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/imageButtonAccountCourse"
-            android:layout_width="100dp"
-            android:layout_height="57dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountAccount"
-            app:layout_constraintStart_toEndOf="@+id/imageButtonAccountForum"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-            app:srcCompat="@android:drawable/alert_dark_frame"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/imageButtonAccountAccount"
-            android:layout_width="100dp"
-            android:layout_height="57dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.673"
-            app:layout_constraintStart_toEndOf="@+id/imageButtonAccountCourse"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-            app:layout_constraintVertical_bias="0.666"
-            tools:ignore="SpeakableTextPresentCheck"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <ImageButton
-            android:id="@+id/imageButtonAccountForum"
-            android:layout_width="100dp"
-            android:layout_height="57dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountCourse"
-            app:layout_constraintStart_toEndOf="@+id/imageButtonAccountMarket"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-            tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
