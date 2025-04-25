@@ -5,13 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context=".Account"
     tools:ignore="DuplicateIds">
 
 
         <ImageButton
             android:id="@+id/imageButtonAccountAccount"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.25"
             android:layout_height="57dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageButtonAccountCourse"
@@ -22,8 +24,9 @@
 
         <ImageButton
             android:id="@+id/imageButtonAccountCourse"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
             android:layout_height="57dp"
+            app:layout_constraintWidth_percent="0.25"
             app:layout_constraintBottom_toBottomOf="@+id/imageButtonAccountForum"
             app:layout_constraintStart_toEndOf="@+id/imageButtonAccountForum"
             app:layout_constraintTop_toTopOf="@+id/imageButtonAccountForum"
@@ -33,7 +36,8 @@
 
         <ImageButton
             android:id="@+id/imageButtonAccountForum"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.25"
             android:layout_height="57dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageButtonAccountMarket"
             app:layout_constraintStart_toEndOf="@+id/imageButtonAccountMarket"
@@ -153,11 +157,12 @@
 
         <ImageButton
             android:id="@+id/imageButtonAccountMarket"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
             android:layout_height="57dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+            app:layout_constraintWidth_percent="0.25"
             app:srcCompat="@drawable/ic_launcher_foreground"
             tools:ignore="SpeakableTextPresentCheck" />
 

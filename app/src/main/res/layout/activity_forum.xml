@@ -9,7 +9,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonForumCourse"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonForumForum"
@@ -21,7 +22,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonForumAccount"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonForumCourse"
@@ -33,7 +35,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonForumForum"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonForumMarket"
@@ -46,9 +49,10 @@
 
     <ImageButton
         android:id="@+id/imageButtonForumMarket"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="0dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"

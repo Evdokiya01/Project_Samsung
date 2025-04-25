@@ -9,7 +9,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonMarketCourse"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonMarketForum"
         app:layout_constraintStart_toEndOf="@+id/imageButtonMarketForum"
@@ -20,7 +21,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonMarketAccount"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonMarketCourse"
         app:layout_constraintStart_toEndOf="@+id/imageButtonMarketCourse"
@@ -30,7 +32,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonMarketForum"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonMarketMarket"
         app:layout_constraintStart_toEndOf="@+id/imageButtonMarketMarket"
@@ -40,13 +43,14 @@
 
     <ImageButton
         android:id="@+id/imageButtonMarketMarket"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,UnknownIdInLayout" />
 
     <TextView
         android:id="@+id/textView9"

@@ -9,7 +9,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonCourseCourse"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonCourseForum"
@@ -21,7 +22,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonCourseAccount"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonCourseCourse"
@@ -33,21 +35,24 @@
 
     <ImageButton
         android:id="@+id/imageButtonCourseForum"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonCourseMarket"
         app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
         app:layout_constraintStart_toEndOf="@+id/imageButtonCourseMarket"
         app:layout_constraintTop_toTopOf="@+id/imageButtonCourseMarket"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButtonCourseMarket"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="0dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
