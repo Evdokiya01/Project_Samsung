@@ -109,7 +109,6 @@
             android:layout_height="135dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="64dp"
-            android:layout_marginEnd="30dp"
             android:layout_marginBottom="539dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView3"

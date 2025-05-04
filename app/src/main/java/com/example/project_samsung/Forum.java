@@ -32,6 +32,7 @@ public class Forum extends AppCompatActivity {
 
         Intent intent_account = new Intent(this, Account.class);
         Intent intent_course = new Intent(this, Course.class);
+        Intent intent_market = new Intent(this, Market.class);
 
         imageButtonForumAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +44,7 @@ public class Forum extends AppCompatActivity {
         imageButtonForumMarket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(intent_market);
             }
         });
 

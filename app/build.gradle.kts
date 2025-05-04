@@ -7,6 +7,7 @@ android {
     namespace = "com.example.project_samsung"
     compileSdk = 35
 
+
     defaultConfig {
         applicationId = "com.example.project_samsung"
         minSdk = 24
@@ -36,7 +37,7 @@ android {
 }
 
 dependencies {
-
+    implementation("com.squareup.picasso:picasso:2.8")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

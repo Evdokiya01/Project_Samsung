@@ -27,11 +27,12 @@ public class Course extends AppCompatActivity {
 
         Intent intent_forum = new Intent(this, Forum.class);
         Intent intent_account = new Intent(this, Account.class);
+        Intent intent_market = new Intent(this, Market.class);
 
         imageButtonCourseMarket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(intent_market);
             }
         });
 
