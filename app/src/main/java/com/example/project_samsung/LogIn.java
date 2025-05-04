@@ -53,10 +53,3 @@ public class LogIn extends AppCompatActivity {
 
     }
 }
-/*
-ВЫХОД ИЗ АККАУНТА
-SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
-SharedPreferences.Editor editor = sharedPreferences.edit();
-editor.clear(); // Удаляет все сохраненные данные
-editor.apply();
- */

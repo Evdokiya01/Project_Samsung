@@ -2,6 +2,7 @@ package com.example.project_samsung;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -18,7 +19,7 @@ import java.util.List;
 
 public class Account extends AppCompatActivity {
 
-    private ImageButton btn_account_forum, btn_account_market, btn_account_course;
+    private ImageButton btn_account_forum, btn_account_market, btn_account_course, btn_LogOut;
     private ImageView image_view_account;
     private RecyclerView recyclerViewAccount;
     private MyAdapter myAdapter;
@@ -46,6 +47,7 @@ public class Account extends AppCompatActivity {
         btn_account_market = findViewById(R.id.imageButtonAccountMarket);
         btn_account_forum = findViewById(R.id.imageButtonAccountForum);
         btn_account_course = findViewById(R.id.imageButtonAccountCourse);
+        btn_LogOut = findViewById(R.id.imageButtonLogOut);
         image_view_account = findViewById(R.id.imageViewAccount);
         recyclerViewAccount = findViewById(R.id.recyclerView);
 
@@ -55,6 +57,7 @@ public class Account extends AppCompatActivity {
         Intent intent_forum = new Intent(this, Forum.class);
         Intent intent_course = new Intent(this, Course.class);
         Intent intent_market = new Intent(this, Market.class);
+        Intent intent_log_in = new Intent(this, LogIn.class);
 
         btn_account_market.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,9 +80,20 @@ public class Account extends AppCompatActivity {
                 finish();
             }
         });
+        btn_LogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();
+                editor.apply();
+                startActivity(intent_log_in);
+                finish();
+            }
+        });
 
         List<String> imageUrlList = Arrays.asList(image_urls);
-        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL); // 2 колонки, вертикальное расположение
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerViewAccount.setLayoutManager(layoutManager);
         myAdapter = new MyAdapter(imageUrlList);
         recyclerViewAccount.setAdapter(myAdapter);
