@@ -33,6 +33,7 @@ public class Course extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_market);
+                finish();
             }
         });
 
@@ -40,6 +41,7 @@ public class Course extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_forum);
+                finish();
             }
         });
 
@@ -47,6 +49,7 @@ public class Course extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_account);
+                finish();
             }
         });
 

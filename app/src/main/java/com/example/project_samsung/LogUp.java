@@ -45,6 +45,7 @@ public class LogUp extends AppCompatActivity {
                 String password_confirmation = editText_Number_Password_Confirmation_LogUp.getText().toString();
                 doSave(new User(email, password_confirmation));
                 startActivity(intent);
+                finish();
             }
         });
     }

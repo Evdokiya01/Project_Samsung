@@ -38,6 +38,7 @@ public class Forum extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_account);
+                finish();
             }
         });
 
@@ -45,6 +46,7 @@ public class Forum extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_market);
+                finish();
             }
         });
 
@@ -52,6 +54,7 @@ public class Forum extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_course);
+                finish();
             }
         });
         /*

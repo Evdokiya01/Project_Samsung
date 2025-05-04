@@ -51,18 +51,21 @@ public class Account extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_market);
+                finish();
             }
         });
         btn_account_forum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(intent_forum);
+                finish();
             }
         });
         btn_account_course.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(intent_course);
+                finish();
             }
         });
 
