@@ -34,7 +34,7 @@ public class LogIn extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("username", "имя_пользователя"); //мб лучше другую инфу сохранять
+                editor.putString("username", "имя_пользователя");
                 editor.putString("login", "логин");
                 editor.putBoolean("isLoggedIn", true);
                 editor.apply();
