@@ -5,14 +5,19 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.squareup.picasso.Picasso;
 
 public class LogIn extends AppCompatActivity {
 
     private Button btn_log_in;
     private TextView textView;
+    private ImageView image_view_log_in;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,10 @@ public class LogIn extends AppCompatActivity {
         setContentView(R.layout.log_in);
         btn_log_in = findViewById(R.id.buttonLogIn);
         textView = findViewById(R.id.textViewLogInUp);
+        image_view_log_in = findViewById(R.id.imageView2);
+
+        String url = "https://papik.pro/grafic/uploads/posts/2023-04/1681528233_papik-pro-p-lichnii-logotip-vektor-4.png";
+        Picasso.get().load(url).into(image_view_log_in);
 
         Intent intent_account = new Intent(this, Account.class);
         Intent intent_log_up = new Intent(this, LogUp.class);
