@@ -2,8 +2,7 @@ package com.example.project_samsung;
 
  public class User {
      private String email;
-     private String password; // В реальном приложении не следует хранить пароли в открытом виде!
-                              // Используйте Firebase Authentication для управления пользователями.
+     private String password;
 
      public User() {
          // Пустой конструктор необходим для Firebase
