@@ -3,26 +3,23 @@ package com.example.project_samsung;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.squareup.picasso.Picasso;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
-import android.util.Log;
-import android.widget.Toast;
-
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 
 public class LogIn extends AppCompatActivity {
 
@@ -30,23 +27,15 @@ public class LogIn extends AppCompatActivity {
     private TextView textView;
     private ImageView image_view_log_in;
     private EditText edit_text_log_in_email, edit_text_log_in_password;
-    private FirebaseDatabase db;
-    private DatabaseReference table, passwords;
-
-
-
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_in);
 
+        auth = FirebaseAuth.getInstance();
 
-        db = FirebaseDatabase.getInstance();
-        table = db.getReference("Users");
-
-
-        setContentView(R.layout.log_in);
         btn_log_in = findViewById(R.id.buttonLogIn);
         textView = findViewById(R.id.textViewLogInUp);
         image_view_log_in = findViewById(R.id.imageView2);
@@ -58,8 +47,6 @@ public class LogIn extends AppCompatActivity {
 
         Intent intent_account = new Intent(this, Account.class);
         Intent intent_log_up = new Intent(this, LogUp.class);
-
-
 
         btn_log_in.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,48 +61,28 @@ public class LogIn extends AppCompatActivity {
 
                 Toast.makeText(LogIn.this, "Проверка данных...", Toast.LENGTH_SHORT).show();
 
-
-
-                Log.d("FirebaseTest", "Перед вызовом addListener");
-                table.addListenerForSingleValueEvent(new ValueEventListener() {
+                auth.signInWithEmailAndPassword(emailInput, passwordInput).addOnCompleteListener(LogIn.this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Log.d("FirebaseUser", "мяу");
-                        boolean found = false;
-                        for (DataSnapshot childSnapshot : snapshot.getChildren()) {
-                            String email = childSnapshot.child("email").getValue(String.class);
-                            String password = childSnapshot.child("password").getValue(String.class);
-                            Log.d("FirebaseUser", "email: " + email + ", password: " + password);
-
-                            if (email != null && email.equals(emailInput) && password != null && password.equals(passwordInput)) {
-                                found = true;
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                FirebaseUser user = auth.getCurrentUser();
                                 SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                                String username = childSnapshot.child("name").getValue(String.class);
-                                editor.putString("username", username != null ? username : "");
-                                editor.putString("login", email);
+                                editor.putString("login", user.getEmail());
                                 editor.putBoolean("isLoggedIn", true);
                                 editor.apply();
 
-                                startActivity(new Intent(LogIn.this, Account.class));
+                                startActivity(intent_account);
                                 finish();
-                                break;
+                            } else {
+                                Log.e("FirebaseAuth", "Ошибка входа", task.getException());
+                                Toast.makeText(LogIn.this, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
                             }
-                        }
-                        if (!found) {
-                            Toast.makeText(LogIn.this, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Log.d("FirebaseUser", "мяу мяу");
-                        Log.e("FirebaseError", "Ошибка: " + error.getMessage());
-                        Toast.makeText(LogIn.this, "Ошибка при загрузке данных", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
         });
+
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,6 +90,5 @@ public class LogIn extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }
