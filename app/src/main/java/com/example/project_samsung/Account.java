@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
 import java.util.Arrays;
@@ -23,6 +26,7 @@ public class Account extends AppCompatActivity {
     private ImageView image_view_account;
     private RecyclerView recyclerViewAccount;
     private MyAdapter myAdapter;
+    private TextView text_account_login;
 
     private final String image_urls[] = {
             "https://www.dovora.com/resources/weather-icons/showcase/modern_showcase/angry_clouds.png",
@@ -50,6 +54,18 @@ public class Account extends AppCompatActivity {
         btn_LogOut = findViewById(R.id.imageButtonLogOut);
         image_view_account = findViewById(R.id.imageViewAccount);
         recyclerViewAccount = findViewById(R.id.recyclerView);
+        text_account_login = findViewById(R.id.textView17);
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (currentUser != null) {
+            String login = currentUser.getDisplayName();
+            if (login == null || login.isEmpty()) {
+                login = currentUser.getEmail();
+            }
+            text_account_login.setText(login);
+        }
+
 
         String url = "https://papik.pro/grafic/uploads/posts/2023-04/1681528233_papik-pro-p-lichnii-logotip-vektor-4.png";
         Picasso.get().load(url).into(image_view_account);
