@@ -175,4 +175,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_set_as" />
 
+        <ImageButton
+            android:id="@+id/imageButtonAddPortfoliio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButtonLogOut"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonLogOut"
+            app:layout_constraintTop_toTopOf="@+id/imageButtonLogOut"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

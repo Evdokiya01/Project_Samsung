@@ -13,12 +13,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class Forum extends AppCompatActivity {
 
     private ImageButton imageButtonForumMarket, imageButtonForumCourse, imageButtonForumAccount;
-    //private Button forumButtonPlus;
+    private FloatingActionButton forumButtonPlus;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +29,12 @@ public class Forum extends AppCompatActivity {
         imageButtonForumCourse = findViewById(R.id.imageButtonForumCourse);
         imageButtonForumAccount = findViewById(R.id.imageButtonForumAccount);
 
-        //forumButtonPlus = findViewById(R.id.forumButtonPlus);
+        forumButtonPlus = findViewById(R.id.forumButtonPlus);
 
         Intent intent_account = new Intent(this, Account.class);
         Intent intent_course = new Intent(this, Course.class);
         Intent intent_market = new Intent(this, Market.class);
+        Intent intent_add_forum = new Intent(this, ForumAdd.class);
 
         imageButtonForumAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,13 +59,12 @@ public class Forum extends AppCompatActivity {
                 finish();
             }
         });
-        /*
         forumButtonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(intent_add_forum);
+                finish();
             }
         });
-         */
     }
 }

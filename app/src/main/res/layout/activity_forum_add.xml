@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ForumAdd">
+
+    <ImageButton
+        android:id="@+id/imageButtonAddForumMarket"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.25"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAddForumAccount"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonAddForumCourse"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonAccountForum"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.25"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck,UnknownIdInLayout" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAddForumCourse"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonAddForumForum"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonAccountMarket"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_percent="0.25"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck,UnknownIdInLayout" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAddForumForum"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonAddForumMarket"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        app:layout_constraintWidth_percent="0.25"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck,UnknownIdInLayout" />
+
+    <EditText
+        android:id="@+id/editTextAddForumTopic"
+        android:layout_width="329dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:hint="Тема"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/AddForumButtonPublish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#45A0CA"
+        android:text="Опубликовать"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddForumContent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextAddForumContent"
+        android:layout_width="322dp"
+        android:layout_height="402dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Содержание статьи"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddForumTopic"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

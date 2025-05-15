@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Project_Samsung"
         tools:targetApi="31">
         <activity
+            android:name=".ForumAdd"
+            android:exported="false" />
+        <activity
             android:name=".LogIn"
             android:exported="false" />
         <activity
