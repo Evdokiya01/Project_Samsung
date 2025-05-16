@@ -60,7 +60,7 @@
         tools:ignore="SpeakableTextPresentCheck,UnknownIdInLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
+        android:id="@+id/recyclerViewForum"
         android:layout_width="347dp"
         android:layout_height="597dp"
         app:layout_constraintBottom_toTopOf="@+id/imageButtonCourseCourse"

@@ -12,18 +12,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.project_samsung.FirbaseClass.Forums;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class ForumAdd extends AppCompatActivity {
 
@@ -92,7 +88,10 @@ public class ForumAdd extends AppCompatActivity {
                 String topic = edit_text_add_forum_topic.getText().toString().trim();
                 String content = edit_text_add_forum_content.getText().toString().trim();
 
-                Forums newForums = new Forums(topic, content);
+                FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                login = currentUser.getEmail();
+
+                Forums newForums = new Forums(topic, content, login);
                 doSave(newForums);
             }
         });
@@ -100,16 +99,6 @@ public class ForumAdd extends AppCompatActivity {
 
     private void doSave(Forums forum) {
         collectionUsers = FirebaseFirestore.getInstance().collection("forum");
-
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        if (currentUser != null) {
-            String login = currentUser.getDisplayName();
-            if (login == null || login.isEmpty()) {
-                login = currentUser.getEmail();
-            }
-        }
-
         collectionUsers.add(forum)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
