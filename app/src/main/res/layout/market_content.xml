@@ -63,11 +63,11 @@
             </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textContent"
+        <ImageView
+            android:id="@+id/imageViewMarket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="content"
-            android:textSize="14sp" />
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

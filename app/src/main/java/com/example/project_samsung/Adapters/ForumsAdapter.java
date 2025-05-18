@@ -47,9 +47,9 @@ public class ForumsAdapter extends RecyclerView.Adapter<ForumsAdapter.ForumsView
 
         public ForumsViewHolder(@NonNull View itemView) {
             super(itemView);
-            textTopic = itemView.findViewById(R.id.textTopic);
+            textTopic = itemView.findViewById(R.id.textName);
             textContent = itemView.findViewById(R.id.textContent);
-            textLogin = itemView.findViewById(R.id.textLogin);
+            textLogin = itemView.findViewById(R.id.textLoginMarket);
         }
     }
 

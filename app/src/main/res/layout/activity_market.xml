@@ -7,6 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".Market">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCourse"
+        android:layout_width="373dp"
+        android:layout_height="499dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/forumButtonPlusMarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        app:backgroundTint="#45A0CA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewCourse"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
     <ImageButton
         android:id="@+id/imageButtonMarketCourse"
         android:layout_width="0dp"
@@ -51,17 +74,5 @@
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="SpeakableTextPresentCheck,UnknownIdInLayout" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="market"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

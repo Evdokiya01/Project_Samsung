@@ -5,7 +5,36 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ForumAdd">
+    tools:context=".MarketAdd">
+
+    <EditText
+        android:id="@+id/editTextAddCoursePrice"
+        android:layout_width="291dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Ссылка на фото"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAddCourseName"
+        app:layout_constraintStart_toStartOf="@+id/editTextAddCourseName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddCourseName"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextAddCourseName"
+        android:layout_width="283dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:hint="Название товара"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/imageButtonAddCourseMarket"
@@ -52,49 +81,16 @@
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="SpeakableTextPresentCheck,UnknownIdInLayout" />
 
-    <EditText
-        android:id="@+id/editTextAddForumTopic"
-        android:layout_width="329dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="30dp"
-        android:ems="10"
-        android:hint="Тема"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
     <Button
         android:id="@+id/AddCourseButtonPublish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="35dp"
         android:backgroundTint="#45A0CA"
         android:text="Опубликовать"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonAddCourseAccount"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAddForumContent"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextAddForumContent"
-        android:layout_width="322dp"
-        android:layout_height="402dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Содержание статьи"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAddForumTopic"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

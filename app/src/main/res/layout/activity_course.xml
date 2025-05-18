@@ -10,33 +10,46 @@
     <ImageButton
         android:id="@+id/imageButtonCourseCourse"
         android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonCourseForum"
         app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
         app:layout_constraintStart_toEndOf="@+id/imageButtonCourseForum"
         app:layout_constraintTop_toTopOf="@+id/imageButtonCourseForum"
+        app:layout_constraintWidth_percent="0.25"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="DuplicateIds,SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/forumButtonPlusCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        app:backgroundTint="#45A0CA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewCourse"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
     <ImageButton
         android:id="@+id/imageButtonCourseAccount"
         android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonCourseCourse"
         app:layout_constraintEnd_toStartOf="@+id/imageButtonAccountForum"
         app:layout_constraintStart_toEndOf="@+id/imageButtonCourseCourse"
         app:layout_constraintTop_toTopOf="@+id/imageButtonCourseCourse"
+        app:layout_constraintWidth_percent="0.25"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="DuplicateIds,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButtonCourseForum"
         android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.25"
         android:layout_height="57dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButtonCourseMarket"
@@ -44,6 +57,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageButtonCourseMarket"
         app:layout_constraintTop_toTopOf="@+id/imageButtonCourseMarket"
         app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_percent="0.25"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -60,23 +74,13 @@
         tools:ignore="SpeakableTextPresentCheck,UnknownIdInLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewForum"
-        android:layout_width="347dp"
-        android:layout_height="597dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButtonCourseCourse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Course"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/recyclerViewCourse"
+        android:layout_width="334dp"
+        android:layout_height="566dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,7 @@ import java.util.List;
 
 public class Account extends AppCompatActivity {
 
-    private ImageButton btn_account_forum, btn_account_market, btn_account_course, btn_LogOut;
+    private ImageButton btn_account_forum, btn_account_market, btn_account_course, btn_LogOut, btn_account_account;
     private ImageView image_view_account;
     private RecyclerView recyclerViewAccount;
     private MyAdapter myAdapter;
@@ -52,6 +52,7 @@ public class Account extends AppCompatActivity {
         btn_account_market = findViewById(R.id.imageButtonAccountMarket);
         btn_account_forum = findViewById(R.id.imageButtonAccountForum);
         btn_account_course = findViewById(R.id.imageButtonAccountCourse);
+        btn_account_account = findViewById(R.id.imageButtonAccountAccount);
         btn_LogOut = findViewById(R.id.imageButtonLogOut);
         image_view_account = findViewById(R.id.imageViewAccount);
         recyclerViewAccount = findViewById(R.id.recyclerView);
@@ -68,8 +69,17 @@ public class Account extends AppCompatActivity {
         }
 
 
-        String url = "https://papik.pro/grafic/uploads/posts/2023-04/1681528233_papik-pro-p-lichnii-logotip-vektor-4.png";
-        Picasso.get().load(url).into(image_view_account);
+        String url_account = "https://papik.pro/grafic/uploads/posts/2023-04/1681528233_papik-pro-p-lichnii-logotip-vektor-4.png";
+        String url_forum = "https://www.pngarts.com/files/17/Forum-PNG-Pic-HQ.png";
+        String url_course = "https://avatars.mds.yandex.net/i?id=5d5c4f1aa3a701195ce40beb93706ade661ab434-9181645-images-thumbs&n=13";
+        String url_market = "https://banner2.cleanpng.com/20180531/ioi/kisspng-computer-icons-convenience-shop-5b0f92207789c8.4262469815277471044896.jpg";
+
+        Picasso.get().load(url_account).fit().centerCrop().into(btn_account_account);
+        Picasso.get().load(url_forum).fit().centerCrop().into(btn_account_forum);
+        Picasso.get().load(url_course).fit().centerCrop().into(btn_account_course);
+        Picasso.get().load(url_market).fit().centerCrop().into(btn_account_market);
+
+        Picasso.get().load(url_account).into(image_view_account);
 
         Intent intent_forum = new Intent(this, Forum.class);
         Intent intent_course = new Intent(this, Course.class);
