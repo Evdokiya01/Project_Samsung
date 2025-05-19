@@ -64,7 +64,6 @@ public class LogUp extends AppCompatActivity {
                                 Toast.makeText(LogUp.this, "Регистрация успешна!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LogUp.this, MainActivity.class);
                                 startActivity(intent);
-                                finish();
                             } else {
                                 Log.w(TAG, "Ошибка регистрации", task.getException());
                                 Toast.makeText(LogUp.this, "Ошибка регистрации: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -72,5 +71,13 @@ public class LogUp extends AppCompatActivity {
                         });
             }
         });
+    }/*
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent_last_activity = new Intent(this, Activity.getActivity().getClass());
+        startActivity(intent_last_activity);
+        finish();
     }
+    */
 }

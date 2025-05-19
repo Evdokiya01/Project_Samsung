@@ -36,6 +36,7 @@ public class ForumAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum_add);
 
+
         image_button_add_forum_account = findViewById(R.id.imageButtonAddCourseAccount);
         image_button_add_forum_forum = findViewById(R.id.imageButtonAddCourseForum);
         image_button_add_forum_course = findViewById(R.id.imageButtonAddCourseCourse);
@@ -67,7 +68,7 @@ public class ForumAdd extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_account);
-                finish();
+//                Activity.setActivity(this);
             }
         });
 
@@ -75,14 +76,14 @@ public class ForumAdd extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_forum);
-                finish();
+//                Activity.setActivity(this);
             }
         });
         image_button_add_forum_market.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(intent_market);
-                finish();
+//                Activity.setActivity(this);
             }
         });
 
@@ -90,7 +91,7 @@ public class ForumAdd extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_course);
-                finish();
+//                Activity.setActivity(this);
             }
         });
         button_publish.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +102,7 @@ public class ForumAdd extends AppCompatActivity {
 
                 FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
                 login = currentUser.getEmail();
+//                Activity.setActivity(this);
 
                 Forums newForums = new Forums(topic, content, login);
                 doSave(newForums);
@@ -118,7 +120,6 @@ public class ForumAdd extends AppCompatActivity {
 
                         Intent intent = new Intent(ForumAdd.this, Forum.class);
                         startActivity(intent);
-                        finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -128,5 +129,12 @@ public class ForumAdd extends AppCompatActivity {
                         Toast.makeText(ForumAdd.this, "Ошибка при сохранении данных: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-    }
+    }/*
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent_last_activity = new Intent(this, Activity.getActivity().getClass());
+        startActivity(intent_last_activity);
+        finish();
+    }*/
 }

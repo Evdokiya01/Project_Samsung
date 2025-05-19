@@ -35,6 +35,10 @@ public class MarketAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market_add);
 
+        Intent intent = new Intent(this, Account.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
         imageButtonAddMarketMarket = findViewById(R.id.imageButtonAddCourseMarket);
         imageButtonAddMarketForum = findViewById(R.id.imageButtonAddCourseForum);
         imageButtonAddMarketCourse = findViewById(R.id.imageButtonAddCourseCourse);
@@ -66,7 +70,7 @@ public class MarketAdd extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_account);
-                finish();
+//                Activity.setActivity(this);
             }
         });
 
@@ -74,14 +78,14 @@ public class MarketAdd extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_forum);
-                finish();
+//                Activity.setActivity(this);
             }
         });
         imageButtonAddMarketMarket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(intent_market);
-                finish();
+//                Activity.setActivity(this);
             }
         });
 
@@ -89,7 +93,7 @@ public class MarketAdd extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_course);
-                finish();
+//                Activity.setActivity(this);
             }
         });
         AddMArketButtonPublish.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +104,7 @@ public class MarketAdd extends AppCompatActivity {
 
                 FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
                 login = currentUser.getEmail();
+//                Activity.setActivity(this);
 
                 Markets newMarkets = new Markets(name, foto, login);
                 doSave(newMarkets);
@@ -117,7 +122,6 @@ public class MarketAdd extends AppCompatActivity {
 
                         Intent intent = new Intent(MarketAdd.this, Market.class);
                         startActivity(intent);
-                        finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -128,4 +132,13 @@ public class MarketAdd extends AppCompatActivity {
                     }
                 });
     }
+    /*
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent_last_activity = new Intent(this, Activity.getActivity().getClass());
+        startActivity(intent_last_activity);
+        finish();
+    }
+     */
 }

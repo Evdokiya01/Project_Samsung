@@ -38,6 +38,7 @@ public class CourseAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_add);
 
+
         imageButtonAddCourseMarket = findViewById(R.id.imageButtonAddCourseMarket);
         imageButtonAddCourseForum = findViewById(R.id.imageButtonAddCourseForum);
         imageButtonAddCourseCourse = findViewById(R.id.imageButtonAddCourseCourse);
@@ -69,7 +70,7 @@ public class CourseAdd extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_account);
-                finish();
+//                Activity.setActivity(this);
             }
         });
 
@@ -77,22 +78,22 @@ public class CourseAdd extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_forum);
-                finish();
+//                Activity.setActivity(this);
             }
         });
         imageButtonAddCourseMarket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Activity.setActivity(this);
                 startActivity(intent_market);
-                finish();
             }
         });
 
         imageButtonAddCourseCourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Activity.setActivity(this);
                 startActivity(intent_course);
-                finish();
             }
         });
         AddCourseButtonPublish.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +101,7 @@ public class CourseAdd extends AppCompatActivity {
             public void onClick(View view) {
                 String name = editTextAddCourseName.getText().toString().trim();
                 String price = editTextAddCoursePrice.getText().toString().trim();
-
+//                Activity.setActivity(this);
 
                 Courses newCourses = new Courses(name, price);
                 doSave(newCourses);
@@ -118,7 +119,6 @@ public class CourseAdd extends AppCompatActivity {
 
                         Intent intent = new Intent(CourseAdd.this, Course.class);
                         startActivity(intent);
-                        finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -129,4 +129,13 @@ public class CourseAdd extends AppCompatActivity {
                     }
                 });
     }
+    /*
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent_last_activity = new Intent(this, Activity.getActivity().getClass());
+        startActivity(intent_last_activity);
+        finish();
+    }
+     */
 }

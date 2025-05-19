@@ -29,7 +29,7 @@ public class Account extends AppCompatActivity {
     private MyAdapter myAdapter;
     private TextView text_account_login;
 
-    private final String image_urls[] = {
+    private final String[] image_urls = {
             "https://www.dovora.com/resources/weather-icons/showcase/modern_showcase/angry_clouds.png",
             "https://www.dovora.com/resources/weather-icons/showcase/modern_showcase/day_clear.png",
             "https://www.dovora.com/resources/weather-icons/showcase/modern_showcase/night_half_moon_partial_cloud.png",
@@ -42,12 +42,14 @@ public class Account extends AppCompatActivity {
             "https://www.dovora.com/resources/weather-icons/showcase/modern_showcase/fog.png",
             "https://www.dovora.com/resources/weather-icons/showcase/modern_showcase/angry_clouds.png"
     };
+    private Activity Account;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+
 
         btn_account_market = findViewById(R.id.imageButtonAccountMarket);
         btn_account_forum = findViewById(R.id.imageButtonAccountForum);
@@ -68,7 +70,6 @@ public class Account extends AppCompatActivity {
             text_account_login.setText(login);
         }
 
-
         String url_account = "https://papik.pro/grafic/uploads/posts/2023-04/1681528233_papik-pro-p-lichnii-logotip-vektor-4.png";
         String url_forum = "https://www.pngarts.com/files/17/Forum-PNG-Pic-HQ.png";
         String url_course = "https://avatars.mds.yandex.net/i?id=5d5c4f1aa3a701195ce40beb93706ade661ab434-9181645-images-thumbs&n=13";
@@ -86,37 +87,25 @@ public class Account extends AppCompatActivity {
         Intent intent_market = new Intent(this, Market.class);
         Intent intent_log_in = new Intent(this, LogIn.class);
 
-        btn_account_market.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intent_market);
-                finish();
-            }
+        btn_account_market.setOnClickListener(view -> {
+            startActivity(intent_market);
+//            Activity.lastActivity = this;
         });
-        btn_account_forum.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intent_forum);
-                finish();
-            }
+        btn_account_forum.setOnClickListener(view -> {
+            startActivity(intent_forum);
+//            Activity.setActivity(this);
         });
-        btn_account_course.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intent_course);
-                finish();
-            }
+        btn_account_course.setOnClickListener(view -> {
+            startActivity(intent_course);
+//            Activity.lastActivity = this;
+
         });
-        btn_LogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.clear();
-                editor.apply();
-                startActivity(intent_log_in);
-                finish();
-            }
+        btn_LogOut.setOnClickListener(view -> {
+            SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
+            startActivity(intent_log_in);
         });
 
         List<String> imageUrlList = Arrays.asList(image_urls);
@@ -125,4 +114,19 @@ public class Account extends AppCompatActivity {
         myAdapter = new MyAdapter(imageUrlList);
         recyclerViewAccount.setAdapter(myAdapter);
     }
+/*
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent_last_activity = new Intent(this, Activity.getActivity().getClass());
+        startActivity(intent_last_activity);
+        finish();
+    }
+
+    @Override
+    public void onClick(View view) {
+
+    }
+
+ */
 }

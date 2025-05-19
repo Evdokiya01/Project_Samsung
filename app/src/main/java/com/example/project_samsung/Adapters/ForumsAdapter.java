@@ -1,5 +1,6 @@
 package com.example.project_samsung.Adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.project_samsung.Account;
 import com.example.project_samsung.FirbaseClass.Forums;
 import com.example.project_samsung.R;
 
@@ -29,12 +31,26 @@ public class ForumsAdapter extends RecyclerView.Adapter<ForumsAdapter.ForumsView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ForumsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ForumsViewHolder holder, int position) {
         Forums forum = forumsList.get(position);
         holder.textTopic.setText(forum.topic);
         holder.textContent.setText(forum.content);
         holder.textLogin.setText(forum.login);
 
+        /*
+        final View itemView = holder.itemView;
+
+
+        holder.textLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Forums currentForum = forumsList.get(holder.getAdapterPosition());
+                Intent intent = new Intent(itemView.getContext(), Account.class);
+                intent.putExtra("content", currentForum.content);
+                itemView.getContext().startActivity(intent);
+            }
+        });
+         */
     }
 
     @Override

@@ -73,7 +73,6 @@ public class LogIn extends AppCompatActivity {
                                 editor.apply();
 
                                 startActivity(intent_account);
-                                finish();
                             } else {
                                 Log.e("FirebaseAuth", "Ошибка входа", task.getException());
                                 Toast.makeText(LogIn.this, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
@@ -87,7 +86,7 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_log_up);
-                finish();
+//                Activity.setActivity(this);
             }
         });
     }

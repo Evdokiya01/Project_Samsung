@@ -33,6 +33,7 @@ public class Market extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
 
+
         btn_market_forum = findViewById(R.id.imageButtonMarketForum);
         btn_market_account = findViewById(R.id.imageButtonMarketAccount);
         btn_market_course = findViewById(R.id.imageButtonMarketCourse);
@@ -44,8 +45,8 @@ public class Market extends AppCompatActivity {
         String url_course = "https://avatars.mds.yandex.net/i?id=5d5c4f1aa3a701195ce40beb93706ade661ab434-9181645-images-thumbs&n=13";
         String url_market = "https://banner2.cleanpng.com/20180531/ioi/kisspng-computer-icons-convenience-shop-5b0f92207789c8.4262469815277471044896.jpg";
 
-        Picasso.get().load(url_account).fit().centerCrop().into(btn_market_forum);
-        Picasso.get().load(url_forum).fit().centerCrop().into(btn_market_account);
+        Picasso.get().load(url_account).fit().centerCrop().into(btn_market_account);
+        Picasso.get().load(url_forum).fit().centerCrop().into(btn_market_forum);
         Picasso.get().load(url_course).fit().centerCrop().into(btn_market_course);
         Picasso.get().load(url_market).fit().centerCrop().into(imageButtonMarketMarket);
 
@@ -67,28 +68,28 @@ public class Market extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_forum);
-                finish();
+//                Activity.setActivity(this);
             }
         });
         btn_market_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(intent_account);
-                finish();
+//                Activity.setActivity(this);
             }
         });
         btn_market_course.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(intent_course);
-                finish();
+//                Activity.setActivity(this);
             }
         });
         forumButtonPlusMarket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(intent_add_tovar);
-                finish();
+//                Activity.setActivity(this);
             }
         });
     }
@@ -113,4 +114,13 @@ public class Market extends AppCompatActivity {
                     }
                 });
     }
+    /*
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent_last_activity = new Intent(this, Activity.getActivity().getClass());
+        startActivity(intent_last_activity);
+        finish();
+    }
+     */
 }

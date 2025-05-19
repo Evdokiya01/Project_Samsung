@@ -65,31 +65,31 @@ public class Course extends AppCompatActivity {
         imageButtonCourseMarket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Activity.setActivity(this);
                 startActivity(intent_market);
-                finish();
             }
         });
 
         imageButtonCourseForum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Activity.setActivity(this);
                 startActivity(intent_forum);
-                finish();
             }
         });
 
         imageButtonCourseAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Activity.setActivity(this);
                 startActivity(intent_account);
-                finish();
             }
         });
         forumButtonPlusCourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Activity.setActivity(this);
                 startActivity(intent_add_course);
-                finish();
             }
         });
 
@@ -114,4 +114,13 @@ public class Course extends AppCompatActivity {
                     }
                 });
     }
+    /*
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent_last_activity = new Intent(this, Activity.getActivity().getClass());
+        startActivity(intent_last_activity);
+        finish();
+    }
+     */
 }

@@ -33,6 +33,7 @@ public class Forum extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
 
+
         imageButtonForumMarket = findViewById(R.id.imageButtonForumMarket);
         imageButtonForumCourse = findViewById(R.id.imageButtonForumCourse);
         imageButtonForumAccount = findViewById(R.id.imageButtonForumAccount);
@@ -66,7 +67,7 @@ public class Forum extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_account);
-                finish();
+//                Activity.setActivity(this);
             }
         });
 
@@ -74,7 +75,7 @@ public class Forum extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_market);
-                finish();
+//                Activity.setActivity(this);
             }
         });
 
@@ -82,14 +83,14 @@ public class Forum extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_course);
-                finish();
+//                Activity.setActivity(this);
             }
         });
         forumButtonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(intent_add_forum);
-                finish();
+//                Activity.setActivity(this);
             }
         });
     }
@@ -113,4 +114,13 @@ public class Forum extends AppCompatActivity {
                     }
                 });
     }
+    /*
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent_last_activity = new Intent(this, Activity.getActivity().getClass());
+        startActivity(intent_last_activity);
+        finish();
+    }
+     */
 }
