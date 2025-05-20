@@ -35,10 +35,6 @@ public class MarketAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market_add);
 
-        Intent intent = new Intent(this, Account.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-
         imageButtonAddMarketMarket = findViewById(R.id.imageButtonAddCourseMarket);
         imageButtonAddMarketForum = findViewById(R.id.imageButtonAddCourseForum);
         imageButtonAddMarketCourse = findViewById(R.id.imageButtonAddCourseCourse);

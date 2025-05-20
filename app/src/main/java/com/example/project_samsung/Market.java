@@ -89,6 +89,7 @@ public class Market extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intent_add_tovar);
+                finish();
 //                Activity.setActivity(this);
             }
         });
