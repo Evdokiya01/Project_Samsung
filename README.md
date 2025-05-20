@@ -19,5 +19,6 @@ https://disk.yandex.ru/d/pUM3Jc00Y7kjJA - приложение для скачи
 https://rutube.ru/video/5342baf8c51f546c7956b0b72ce8810e/?r=wd - Демо-видео
 
 https://disk.yandex.ru/i/14GYYdRvgeDG4Q - Презентация
+
 Макет дизайна:
 ![image](https://github.com/user-attachments/assets/c311dfe6-1119-4d32-af16-602b70a7c938)
